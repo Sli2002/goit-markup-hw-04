@@ -96,8 +96,24 @@ img {
     color: #2e2f42;
 }
 
+.nav-link.current {
+    position: relative;
+}
+
+.nav-link.current::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    background-color: #404bbf;
+    border-radius: 2px;
+    height: 4px;
+    width: 100%;
+}
+
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.current {
     color: #404bbf;
 }
 
@@ -128,7 +144,12 @@ img {
 /*---------------- HERO ---------*/
 .section-hero {
     background-color: #2e2f42;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/office.jpg);
+    background-size: cover;
+    background-position: center;
     padding: 188px 0;
+    max-width: 1440;
+    margin: 0 auto;
 }
 
 .hero-container {
@@ -198,11 +219,25 @@ img {
     flex-basis: calc((100% - 72px) / 4);
 }
 
+.about-box {}
+
+.box-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
+    width: 264px;
+    height: 112px;
+    background-color: #F4F4FD;
+    margin-bottom: 8px;
+}
+
 .about-titel {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
     color: #2e2f42;
     margin-bottom: 8px;
 }
@@ -242,6 +277,7 @@ img {
     gap: 24px;
     align-items: center;
     flex-wrap: wrap;
+
 }
 
 
@@ -249,7 +285,10 @@ img {
 .team-item {
     background-color: #ffffff;
     border-bottom: 1px solid #e7e9fc;
-    border-radius: 0 0 4px 4px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+        0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+        0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 
 }
 
@@ -275,8 +314,34 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     text-align: center;
-    color: #434455
+    color: #434455;
+    margin-bottom: 8px;
 }
+
+.team-list-icon {
+    display: flex;
+    gap: 24px;
+    margin: 0 16px;
+}
+
+.team-list-icon .team-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4D5AE5;
+
+}
+
+.team-icon:hover,
+.team-icon:focus {
+    background-color: #404BBF;
+
+}
+
+.social-link {}
 
 /* -----------PORTFOLIO----------- */
 
@@ -310,8 +375,41 @@ img {
     width: calc((100% - 48px) / 3);
 }
 
+.tumba {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.portfolio-item:hover {
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+        0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+        0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #F4F4FD;
+    background-color: #4D5AE5;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    font-size: 16px;
+    padding: 40px 32px;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+}
+
 .category {
-    /*margin: 32px 16px;*/
+
     border: 1px solid #e7e9fc;
     border-top: none;
     padding: 32px 16px;
@@ -335,8 +433,6 @@ img {
     color: #434455;
 }
 
-/*padding: 8px 0 32px 16px;
-}
 
 /*-----footer-------------------------*/
 .footer-logo {
@@ -344,8 +440,14 @@ img {
     padding: 100px 0;
 }
 
-.footer-container {}
+.footer-container {
+    display: flex;
+    align-items: center;
+}
 
+.footer-part {
+    margin-right: 120px;
+}
 
 .logo-footer {
     margin-bottom: 16px;
@@ -361,3 +463,35 @@ img {
     width: 264px;
 
 }
+
+.footer-link {}
+
+.footer-media {
+    font-weight: 500;
+    /* line-height: 16px;
+    height: 24px; */
+    letter-spacing: 0.02em;
+    text-underline-position: from-font;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 16px;
+
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-item .social-link-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4D5AE5;
+
+}
+
+.social-link-footer {}
